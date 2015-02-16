@@ -1,0 +1,21 @@
+[
+  {
+    "id": "list_file_1",
+    "illusion": "LS",
+    "input": {"path": "."}
+  },
+  {
+    "id": "for_0",
+    "illusion": "FOR_EACH",
+    "input": {"list": "#list_file_1.fileList"},
+    "sub": {
+      "body": [
+        {
+          "id": "echo_2",
+          "illusion": "PRINTF",
+          "input": {"content": "#for_0.iterator"}
+        }
+      ]
+    }
+  }
+]

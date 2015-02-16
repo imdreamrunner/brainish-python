@@ -1,0 +1,292 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  background: #6a5545;
+  color: #ffffff;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+h1 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 50px;
+  height: 50px;
+  padding: 0 20px;
+}
+#top-bars {
+  float: right;
+  margin: -50px 30px 0 0;
+  padding: 0;
+}
+#top-bars li {
+  display: inline-block;
+}
+#top-bars li a {
+  display: block;
+  height: 50px;
+  width: 65px;
+  font-size: 25px;
+  color: #ffffff;
+  line-height: 50px;
+  text-align: center;
+}
+#top-bars li a:hover,
+#top-bars li a.current {
+  background: rgba(255, 255, 255, 0.2);
+}
+#illusions {
+  background: #eeeeee;
+  width: 350px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding-top: 50px;
+  z-index: 50;
+}
+#illusion-type {
+  background: #99bf75;
+  width: 70px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  float: left;
+}
+#illusion-type a {
+  display: block;
+  width: 70px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  color: #ffffff;
+  font-size: 30px;
+}
+#illusion-type a:hover,
+#illusion-type a.current {
+  background: #7eaa59;
+}
+#illusion-list {
+  height: 100%;
+  float: left;
+  overflow-y: auto;
+}
+#illusion-list hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #cacaca;
+}
+#illusion-list .illusion-option {
+  width: 280px;
+  height: 60px;
+  background: #e9e9e9;
+  color: #777777;
+  cursor: pointer !important;
+  overflow: hidden;
+}
+#illusion-list .illusion-option .icon {
+  font-size: 30px;
+  margin: 7px 15px;
+}
+#illusion-list .illusion-option .name {
+  margin: -45px 0 0 55px;
+}
+#illusion-list .illusion-option .description {
+  margin: 1px 0 0 55px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+#illusion-list .illusion-option:hover {
+  background: #eeeeee;
+}
+#panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 50px 0 0 350px;
+  overflow: auto;
+}
+#panel #janish-panel {
+  position: absolute;
+}
+#panel .janish-col {
+  margin: 20px 0 0 80px;
+  float: left;
+}
+#panel .janish-content {
+  width: 300px;
+  background: #eeeeee;
+  overflow: hidden;
+}
+#panel .janish {
+  width: 300px;
+  color: #777777;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+#panel .janish .input {
+  margin: 10px 10px 0 10px;
+  background: #ffffff;
+  text-align: center;
+  padding: 2px 0;
+}
+#panel .janish .icon {
+  text-align: center;
+  font-size: 25px;
+}
+#panel .janish .name {
+  text-align: center;
+  font-size: 16px;
+}
+#panel .janish .output {
+  margin: 5px 10px 10px 10px;
+  background: #ffffff;
+  text-align: center;
+  padding: 2px 0;
+}
+#panel .janish .value-item {
+  display: inline-block;
+}
+#panel .janish .value-input,
+#panel .janish .value-output {
+  display: inline-block;
+  height: 22px;
+  line-height: 22px;
+  margin: 2px 0 ;
+}
+#panel .janish .value-input {
+  background: #776554;
+  color: #ffffff;
+  padding-left: 5px;
+}
+#panel .janish .value-input:after {
+  content: '';
+  position: absolute;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 11px solid #776554;
+  z-index: 10;
+}
+#panel .janish .value-output {
+  background: #8eba69;
+  color: #ffffff;
+  padding: 0 5px 0 15px;
+  margin-left: 0px;
+}
+#panel .janish .value-output:before {
+  content: '';
+  position: absolute;
+  margin-left: -15px;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 11px solid #ffffff;
+  z-index: 5;
+}
+#panel .janish .value-no {
+  background: #cccccc;
+}
+#panel .janish-plus .janish-content {
+  border: 4px dotted #eeeeee;
+  background: #ffffff;
+  text-align: center;
+  color: #aaaaaa;
+  padding: 15px;
+}
+#panel .janish-plus.drag-over .janish-content {
+  border: 4px dotted #cccccc;
+}
+#panel-move,
+#janish-panel {
+  width: 2000px;
+  height: 2000px;
+}
+#panel-background {
+  width: 100%;
+  height: 100%;
+}
+#code {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 400px;
+  height: 510px;
+  z-index: 500;
+  background: #99bf75;
+}
+#code div {
+  height: 490px;
+  margin: 10px;
+  background: #f0f0f0;
+  overflow-x: auto;
+}
+#code div pre {
+  margin: 0;
+  padding: 5px;
+  color: #777777;
+  font-size: 12px;
+  font-family: Consolas, monospace;
+}
+#run,
+#runResult {
+  display: none;
+  background: #99bf75;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 130px;
+  z-index: 500;
+  margin: -65px 0 0 -250px;
+}
+#run textarea,
+#runResult textarea {
+  width: 480px;
+  margin: 10px;
+  height: 75px;
+  border: none;
+  resize: none;
+  padding: 10px;
+  font-family: Consolas, monospace;
+}
+#run div,
+#runResult div {
+  text-align: center;
+}
+#run a#download,
+#runResult a#download {
+  background: #6a5545;
+  color: #ffffff;
+}
+#run a,
+#runResult a {
+  color: #6a5545;
+  text-decoration: none;
+  padding: 4px 10px;
+}
+#runResult {
+  display: none;
+  height: 400px;
+  margin-top: -200px;
+}
+#runResult textarea {
+  height: 350px;
+}
+input.transparent {
+  width: 50px;
+  background: none;
+  border: none;
+}
+*:focus {
+  outline: 0;
+}

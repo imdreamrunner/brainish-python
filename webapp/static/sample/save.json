@@ -1,0 +1,36 @@
+[
+  {
+    "id": "google_search_url",
+    "illusion": "GOOGLE_SEARCH_URL",
+    "input": {"keyword": "Hello"}
+  },
+  {
+    "id": "google_search",
+    "illusion": "GOOGLE_SEARCH",
+    "input": {"url": "#google_search_url.url"}
+  },
+  {
+    "id": "echo",
+    "illusion": "ECHO",
+    "input": {"content": "#google_search.result"}
+  },
+  {
+    "id": "for_each_1",
+    "illusion": "FOR_EACH",
+    "input": {"list": "#google_search.result"},
+    "sub": {
+      "body": [
+        {
+          "id": "download_content_3",
+          "illusion": "DOWNLOAD_CONTENT",
+          "input": {"url": "#for_each_1.iterator"}
+        },
+        {
+          "id": "echo_0",
+          "illusion": "ECHO",
+          "input": {"content": "#download_content_3.content"}
+        }
+      ]
+    }
+  }
+]

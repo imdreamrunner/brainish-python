@@ -1,0 +1,49 @@
+[
+  {
+    "id": "cd",
+    "illusion": "CD",
+    "input": {
+      "path": "log/"
+      }
+  },
+  {
+    "id": "list",
+    "illusion": "LS",
+    "input": {
+      "path": "#cd.pwd"
+      }
+  },
+  {
+    "id": "for_each_log",
+    "illusion": "FOR_EACH",
+    "input": {
+      "list": "#list.fileList"
+    },
+    "sub": {
+      "body": [
+        {
+          "id": "print",
+          "illusion": "PRINTF",
+          "input": {
+            "content": "Searching "
+          }
+        },
+        {
+          "id": "echo",
+          "illusion": "ECHO",
+          "input": {
+            "content": "#for_each_log.iterator"
+          }
+        },
+        {
+          "id": "search_log",
+          "illusion": "GREP_LINE",
+          "input": {
+            "matcher": "12:00",
+            "path": "#for_each_log.iterator"
+          }
+        }
+      ]
+    }
+  }
+]

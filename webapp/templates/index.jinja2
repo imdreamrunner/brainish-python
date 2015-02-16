@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Brainish Editor</title>
+    <link rel="stylesheet" href="/libraries/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/editor.css">
+    <link rel="stylesheet" href="/libraries/highlight/styles/default.css">
+</head>
+<body>
+<div id="header">
+    <h1>Brainish Editor</h1>
+    <ul id="top-bars">
+        <li><a href="#" onclick="displayRun()"><i class="fa fa-share-alt"></i></a></li>
+        <li><a href="#" id="monitor" onclick="displayMonitor()"><i class="fa fa-desktop"></i></a></li>
+    </ul>
+</div>`
+<div id="illusions">
+    <ul id="illusion-type">
+    </ul>
+    <div id="illusion-list">
+    </div>
+</div>
+<div id="panel">
+    <div id="panel-move">
+        <div id="janish-panel"></div>
+        <canvas id="panel-background" width="2000" height="2000"></canvas>
+    </div>
+</div>
+<div id="code">
+    <div id="code-bash">
+        <pre id="pre-bash" class="bash"></pre>
+    </div>
+</div>
+<div id="run">
+    <textarea id="bash-script">curl http://localhost:8080/bash.sh | sh</textarea>
+    <div>
+        <a href="/bash.sh" id="download"><i class="fa fa-download"></i> Download Bash</a>
+        <a href="#" onclick="hideRun()">Done</a>
+    </div>
+</div>
+<script id="template-illusion-type-item" type="text/html">
+    <% if(current) { %>
+    <li><a href="#" class="current"><i class="fa fa-<%-icon%>"></i></a></li>
+    <% } else { %>
+    <li><a href="#"><i class="fa fa-<%-icon%>"></i></a></li>
+    <% } %>
+</script>
+<script id="template-illusion-item" type="text/html">
+    <div class="illusion-option" draggable="true">
+        <div class="icon"><i class="fa fa-<%-icon%>"></i></div>
+        <div class="name"><%-name%></div>
+        <div class="description"><%-description%></div>
+    </div>
+    <hr />
+</script>
+<script id="template-janish-item" type="text/html">
+    <div class="janish" draggable="true">
+        <div class="janish-content">
+            <div class="input">
+                <% for (var i in input) { %>
+                <div class="value-item">
+                    <div class="value-input"><%- input[i] %></div>
+                    <% if (janishInput[input[i]]) { %>
+                    <div class="value-output value-output-having"><%-janishInput[input[i]]%></div>
+                    <% } else { %>
+                    <div class="value-output value-no">null</div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+            <div class="icon"><i class="fa fa-<%- icon %>"></i></div>
+            <div class="name"><%- name %></div>
+            <% if (output && output.length) { %>
+            <div class="output">
+                <% for (var i in output) { %>
+                <div class="value-item">
+                    <div class="value-output value-output-use" draggable="true"><%- output[i] %></div>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</script>
+<script id="template-janish-sub" type="text/html">
+    <div class="janish">
+        <div class="janish-content">
+            <div class="name"><%- name %></div>
+            <% if (output && output.length) { %>
+            <div class="output">
+                <% for (var i in output) { %>
+                <div class="value-item">
+                    <div class="value-output value-output-use" draggable="true"><%- output[i] %></div>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</script>
+<script id="template-janish-plus" type="text/html">
+    <div class="janish janish-plus">
+        <div class="janish-content">
+            <i class="fa fa-plus"></i>
+        </div>
+    </div>
+</script>
+<script type="application/javascript" src="/javascripts/jquery.js"></script>
+<script type="application/javascript" src="/javascripts/underscore-template.min.js"></script>
+<script type="application/javascript" src="/javascripts/editor.js"></script>
+<script type="application/javascript" src="/libraries/highlight/highlight.pack.js"></script>
+</body>
+</html>

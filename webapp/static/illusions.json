@@ -1,0 +1,117 @@
+[
+  {
+    "name": "General",
+    "icon": "asterisk",
+    "list": [
+      {
+        "name": "For Each",
+        "icon": "circle",
+        "description": "Iterate through a list.",
+        "illusion": "FOR_EACH",
+        "input": ["list"],
+        "output": [],
+        "sub": {
+          "body": ["iterator"]
+        }
+      },
+      {
+        "name": "Echo",
+        "icon": "eye",
+        "description": "Echo an content.",
+        "illusion": "echo",
+        "input": ["content"],
+        "output": []
+      },
+      {
+        "name": "Print",
+        "icon": "print",
+        "description": "Print an input.",
+        "illusion": "PRINTF",
+        "input": ["content"],
+        "output": []
+      },
+      {
+        "name": "GOOGLE_SEARCH_URL",
+        "icon": "search",
+        "description": "GOOGLE_SEARCH_URL.",
+        "illusion": "GOOGLE_SEARCH_URL",
+        "input": ["keyword"],
+        "output": ["url"]
+      },
+      {
+        "name": "GOOGLE_SEARCH",
+        "icon": "server",
+        "description": "GOOGLE_SEARCH",
+        "illusion": "GOOGLE_SEARCH",
+        "input": ["url"],
+        "output": ["result"]
+      },
+      {
+        "name": "Change Directory",
+        "icon": "circle",
+        "description": "Change Directory",
+        "illusion": "CD",
+        "input": ["path"],
+        "output": ["pwd"]
+      },
+      {
+        "name": "Grep Line",
+        "icon": "code",
+        "description": "Search keyword in file",
+        "illusion": "GREP_LINE",
+        "input": ["matcher", "path"],
+        "output": []
+      },
+      {
+        "name": "Get Web Page Content",
+        "icon": "cloud-download",
+        "description": "Get the content of a web page.",
+        "illusion": "DOWNLOAD_CONTENT",
+        "input": ["url"],
+        "output": ["content"]
+      }
+    ]
+  },
+  {
+    "name": "File Related",
+    "icon": "file",
+    "list": [
+      {
+        "name": "List File",
+        "icon": "list",
+        "description": "List all the files in a directory.",
+        "illusion": "LS",
+        "input": ["path"],
+        "output": ["fileList"]
+      },
+      {
+        "name": "Filter",
+        "icon": "filter",
+        "description": "Filter the file list.",
+        "input": ["input1", "input2"],
+        "output": ["output1", "output2"]
+      },
+      {
+        "name": "MOVE",
+        "icon": "paper-plane",
+        "description": "Move a file to a certain path",
+        "illusion": "MOVE",
+        "input": ["src_path", "dst_path"],
+        "output": ["target"]
+      }
+    ]
+  },
+  {
+    "name": "Cloud Related",
+    "icon": "cloud-download",
+    "list": [
+      {
+        "name": "Check Condition",
+        "icon": "check",
+        "description": "Execute some illusions if condition matches.",
+        "input": ["input1", "input2"],
+        "output": ["output1", "output2"]
+      }
+    ]
+  }
+]
